@@ -4,26 +4,31 @@ import Header from "./Header";
 import Load from "./Load";
 import Loading from "./Loading";
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   updateAmineList,
   incrementPageNumber,
   resetPageNumber,
   newAmineList,
   loadingList,
+  error,
 } from "../redux/Action";
 import "../css/Amine.css";
+import { errorReducer } from "../redux/Reducer";
 
 let Amine = () => {
   let loading = useSelector((state) => state.loading);
   let query = useSelector((state) => state.query);
   let amineList = useSelector((state) => state.amines);
   let page = useSelector((state) => state.page);
-
   let dispatch = useDispatch();
 
   const fetchAmines = async (from) => {
     try {
       if (page == 1 && query.length == 0) {
+        toast.error("Empty Amine List!!");
         return;
       }
       const response = await fetch(
@@ -31,10 +36,27 @@ let Amine = () => {
       );
       const data = await response.json();
       console.log(data.results);
+      if (!data.results) {
+        if (data.status == 404) {
+          dispatch(error(true));
+          toast.error(data.message);
+        } else {
+          dispatch(error(true));
+          toast.error("Oops some error occured ");
+        }
+        return;
+      }
+      if (data.results.length == 0) {
+        toast.error("Not more found");
+        dispatch(error(true));
+        return;
+      }
 
       dispatch(updateAmineList(data.results));
       dispatch(loadingList(false));
     } catch (err) {
+      toast.error(err);
+      dispatch(error(true));
       console.log(err);
     }
   };
@@ -47,6 +69,7 @@ let Amine = () => {
   return (
     <div className="amine">
       <Header />
+
       {loading == true ? (
         <Loading />
       ) : (
@@ -62,6 +85,17 @@ let Amine = () => {
           <Load />
         </>
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

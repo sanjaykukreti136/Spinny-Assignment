@@ -12,6 +12,13 @@ export const loadingList = (value) => {
   };
 };
 
+export const error = (value) => {
+  return {
+    type: "ERROR",
+    payload: value,
+  };
+};
+
 export const newAmineList = (value) => {
   return {
     type: "NEW_LIST",

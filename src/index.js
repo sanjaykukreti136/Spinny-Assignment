@@ -8,6 +8,7 @@ import {
   pageNumberReducer,
   queryReducer,
   loadingReducer,
+  errorReducer,
 } from "./redux/Reducer";
 
 let rootReducer = combineReducers({
@@ -15,6 +16,7 @@ let rootReducer = combineReducers({
   page: pageNumberReducer,
   query: queryReducer,
   loading: loadingReducer,
+  error: errorReducer,
 });
 
 let myStore = legacy_createStore(rootReducer);
