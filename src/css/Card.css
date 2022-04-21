@@ -4,6 +4,11 @@
   margin: 30px;
   border: 1px solid;
   box-shadow: 5px 5px 4px 0px black;
+  transition: 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 .card img {
   max-width: 100%;
