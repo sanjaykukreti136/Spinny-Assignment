@@ -1,23 +1,39 @@
-export const countIncrement = () => {
+export const updateAmineList = (value) => {
   return {
-    type: "INCREMENT",
+    type: "UPDATE_LIST",
+    payload: value,
   };
 };
 
-export const countDecrement = () => {
+export const loadingList = (value) => {
   return {
-    type: "DECREMENT",
+    type: "LOADING",
+    payload: value,
   };
 };
 
-export const loginAction = () => {
+export const newAmineList = (value) => {
   return {
-    type: "LOGIN",
+    type: "NEW_LIST",
+    payload: value,
   };
 };
 
-export const logoutAction = () => {
+export const currentQuery = (value) => {
   return {
-    type: "LOGOUT",
+    type: "CURR_QUERY",
+    payload: value,
+  };
+};
+
+export const incrementPageNumber = () => {
+  return {
+    type: "INCREMENT_PAGE",
+  };
+};
+
+export const resetPageNumber = () => {
+  return {
+    type: "RESET_PAGES",
   };
 };

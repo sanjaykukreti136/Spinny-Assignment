@@ -1,17 +1,11 @@
 import React from "react";
 import "../css/Card.css";
-let Card = () => {
+let Card = ({ image_url, title }) => {
   return (
     <article class="card">
-      <img
-        src="https://www.quackit.com/pix/samples/15l.jpg"
-        alt="Sample photo"
-      />
+      <img src={image_url} alt="Sample photo" />
       <div class="text">
-        <p>
-          Collaboratively administrate empowered markets via plug-and-play
-          networks.
-        </p>
+        <p>{title}</p>
       </div>
     </article>
   );

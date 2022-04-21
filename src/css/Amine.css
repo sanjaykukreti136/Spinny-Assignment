@@ -20,3 +20,10 @@
   font-weight: 700;
   margin: 2rem;
 }
+
+#loading-text {
+  font-size: 3rem;
+  font-family: cursive;
+  font-weight: bolder;
+  margin: 4rem;
+}

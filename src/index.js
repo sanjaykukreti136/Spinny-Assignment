@@ -3,11 +3,18 @@ import ReactDOM from "react-dom";
 import { legacy_createStore, combineReducers } from "redux";
 import App from "./App";
 import { Provider } from "react-redux";
-import { countReducer, loginReducer } from "./redux/Reducer";
+import {
+  amineListReducer,
+  pageNumberReducer,
+  queryReducer,
+  loadingReducer,
+} from "./redux/Reducer";
 
 let rootReducer = combineReducers({
-  count: countReducer,
-  logged: loginReducer,
+  amines: amineListReducer,
+  page: pageNumberReducer,
+  query: queryReducer,
+  loading: loadingReducer,
 });
 
 let myStore = legacy_createStore(rootReducer);
