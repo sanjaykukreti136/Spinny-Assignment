@@ -1,0 +1,22 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: cornflowerblue;
+  /* z-index: 10; */
+  padding: 0.9rem 0;
+}
+
+.header-text {
+  margin: 13px;
+  font-family: sans-serif;
+  padding: 6px;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 7px;
+}

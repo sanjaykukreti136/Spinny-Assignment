@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { legacy_createStore, combineReducers } from "redux";
+import App from "./App";
+import { Provider } from "react-redux";
+import { countReducer, loginReducer } from "./redux/Reducer";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+let rootReducer = combineReducers({
+  count: countReducer,
+  logged: loginReducer,
+});
+
+let myStore = legacy_createStore(rootReducer);
+ReactDOM.render(
+  <Provider store={myStore}>
     <App />
-  </React.StrictMode>
+  </Provider>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
