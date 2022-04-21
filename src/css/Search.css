@@ -1,19 +1,21 @@
 .search-bar {
+  margin-top: 2rem;
   width: 100%;
-  border: 2px solid;
+  border: 4px solid #d2691e;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
   max-width: 640px;
+  padding: 4px;
 }
 
 .search-bar input {
   width: 75%;
-  background-color: cornflowerblue;
+  background-color: #001f3f;
   border: none;
   height: 2rem;
-  color: cyan;
+  color: white;
   outline: none;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -26,8 +28,11 @@
   width: 15%;
   height: 2rem;
   border: none;
-  background-color: deepskyblue;
+  background-color: #d2691e;
+  /* background-image: radial-gradient( circle 610px at 5.2% 51.6%, rgba(5, 8, 114, 1) 0%, rgba(7, 3, 53, 1) 97.5% ); */
   font-size: 1rem;
   font-family: sans-serif;
   font-weight: bolder;
+  color: white;
+  letter-spacing: 2px;
 }

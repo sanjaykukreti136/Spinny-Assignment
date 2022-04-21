@@ -6,6 +6,7 @@ import {
   resetPageNumber,
   newAmineList,
   currentQuery,
+  error,
 } from "../redux/Action";
 import "../css/Search.css";
 
@@ -24,6 +25,7 @@ let Search = () => {
     event.preventDefault();
     dispatch(resetPageNumber());
     dispatch(newAmineList());
+    dispatch(error(false));
     dispatch(currentQuery(search_value));
     setSearch_Value("");
   }
