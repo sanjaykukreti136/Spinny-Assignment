@@ -1,9 +1,9 @@
 import Header from "./components/Header";
-import Amine from "./components/Amine";
+import Anime from "./components/Anime";
 let App = () => {
   return (
     <>
-      <Amine />
+      <Anime />
     </>
   );
 };

@@ -7,9 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { updateAmineList, loadingList, error } from "../redux/Action";
-import "../css/Amine.css";
+import "../css/Anime.css";
 
-let Amine = () => {
+let Anime = () => {
   let loading = useSelector((state) => state.loading);
   let query = useSelector((state) => state.query);
   let amineList = useSelector((state) => state.amines);
@@ -19,7 +19,7 @@ let Amine = () => {
   const fetchAmines = async (from) => {
     try {
       if (page == 1 && query.length == 0) {
-        toast.error("Empty Amine List!!");
+        toast.error("Empty Anime List!!");
         return;
       }
       const response = await fetch(
@@ -91,4 +91,4 @@ let Amine = () => {
   );
 };
 
-export default Amine;
+export default Anime;
