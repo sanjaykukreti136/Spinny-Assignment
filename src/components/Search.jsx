@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  updateAmineList,
-  incrementPageNumber,
   resetPageNumber,
   newAmineList,
   currentQuery,
@@ -12,10 +10,7 @@ import "../css/Search.css";
 
 let Search = () => {
   let [search_value, setSearch_Value] = useState("");
-  let pageNo = useSelector((state) => state.page);
   let dispatch = useDispatch();
-  let amineList = useSelector((state) => state.amines);
-  let query = useSelector((state) => state.query);
 
   function handleInput(event) {
     setSearch_Value(event.target.value);
@@ -38,6 +33,7 @@ let Search = () => {
           placeholder="Enter Anime Name"
           onChange={handleInput}
           value={search_value}
+          onPre
         ></input>
         <button type="Submit" onClick={handleClick}>
           Search

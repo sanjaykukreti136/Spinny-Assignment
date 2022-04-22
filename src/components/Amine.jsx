@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Card from "./Card";
 import Header from "./Header";
 import Load from "./Load";
@@ -6,17 +6,8 @@ import Loading from "./Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import {
-  updateAmineList,
-  incrementPageNumber,
-  resetPageNumber,
-  newAmineList,
-  loadingList,
-  error,
-} from "../redux/Action";
+import { updateAmineList, loadingList, error } from "../redux/Action";
 import "../css/Amine.css";
-import { errorReducer } from "../redux/Reducer";
 
 let Amine = () => {
   let loading = useSelector((state) => state.loading);
@@ -87,7 +78,7 @@ let Amine = () => {
       )}
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
