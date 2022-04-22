@@ -9,7 +9,7 @@ let Loading = () => {
       {error == true ? (
         <p id="loading-text">Oops Some Error Occured</p>
       ) : query.length == 0 ? (
-        <p id="loading-text">Type in Search Bar for Your Favorite Anime</p>
+        <p id="loading-text">Type in Search Bar for Your Favourite Anime</p>
       ) : (
         <>
           <div class="spinner"></div>
