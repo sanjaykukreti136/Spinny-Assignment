@@ -10,6 +10,7 @@ let Header = () => {
     <>
       <div className="header">
         <Search />
+
         <span className="header-text">
           {`REQUESTING : https://api.jikan.moe/v3/search/anime?q=${query}&limit=16&page=${page}`}
         </span>

@@ -19,7 +19,7 @@ let Anime = () => {
   const fetchAmines = async (from) => {
     try {
       if (page == 1 && query.length == 0) {
-        toast.error("Empty Anime List!!");
+        toast.error("Search Your Favourite Anime");
         return;
       }
       const response = await fetch(
