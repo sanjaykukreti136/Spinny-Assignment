@@ -6,15 +6,16 @@
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
+  grid-gap: 2.5rem;
+  gap: 2.5rem;
+  margin: 2rem 0;
 }
 
 #load-more {
-  width: 10vw;
-  height: 2rem;
+  width: 4;
+  height: 4rem;
   border: 2px solid aqua;
   background-color: #191970;
   font-family: system-ui;
@@ -22,12 +23,4 @@
   font-weight: 700;
   margin: 2rem;
   color: aqua;
-}
-
-#loading-text {
-  font-size: 3rem;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: bolder;
-  margin: 13rem;
-  color: white;
 }

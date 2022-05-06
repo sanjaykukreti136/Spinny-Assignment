@@ -29,6 +29,16 @@ let Search = () => {
     <>
       <div className="search-bar">
         <input
+          onKeyDown={(e) => {
+            if (e.key == "Enter") {
+              e.preventDefault();
+              dispatch(resetPageNumber());
+              dispatch(newAmineList());
+              dispatch(error(false));
+              dispatch(currentQuery(search_value));
+              setSearch_Value("");
+            }
+          }}
           type="text"
           placeholder="Enter Anime Name"
           onChange={handleInput}

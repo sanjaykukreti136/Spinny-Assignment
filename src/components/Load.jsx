@@ -7,6 +7,7 @@ let Load = () => {
 
   let incrementPage = () => {
     dispatch(incrementPageNumber());
+    window.scrollTo(0, 9999);
   };
 
   return (

@@ -12,6 +12,26 @@
   border: 6px solid rgba(3, 243, 243, 0.985);
   border-radius: 100%;
 }
+
+/* #loading-text {
+  font-size: 4rem;
+  position: absolute;
+  top: 48%;
+  left: 49%;
+} */
+#loading-text {
+  font-size: 3rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bolder;
+  margin: 13rem;
+
+  color: white;
+  top: 65%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
 .spinner:before {
   content: "";
   display: block;
@@ -20,7 +40,7 @@
   top: -6px;
   height: 100%;
   width: 100%;
-  border-top: 6px solid rgba(0, 0, 0, 0.8);
+  border-top: 6px solid rgba(31, 16, 16, 0.8);
   border-left: 6px solid transparent;
   border-bottom: 6px solid transparent;
   border-right: 6px solid transparent;
