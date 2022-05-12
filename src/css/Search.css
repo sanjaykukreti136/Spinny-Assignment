@@ -1,13 +1,14 @@
 .search-bar {
-  margin-top: 2rem;
   width: 100%;
-  border: 4px solid #d2691e;
+  max-width: 620px;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  border: 0.2rem solid #d2691e;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  max-width: 640px;
-  padding: 4px;
+  margin-top: 2rem;
 }
 
 .search-bar input {
